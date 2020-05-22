@@ -26,6 +26,7 @@ int main(int argc, char** argv) {
 		cin>>option;
 		
 		Persona* pers = NULL;
+		Persona* persManipulada = NULL;
 		switch(option){
 			case 1:{
 				string nombre,apellido,contrasena;
@@ -51,6 +52,8 @@ int main(int argc, char** argv) {
 				break;
 			}
 			case 2:{
+				
+				int subOption = 0;
 				string nombre,contra;
 				cout<<"#MENU LOG IN#"<<endl;
 				cout<<"Ingrese su nombre:";
@@ -58,10 +61,53 @@ int main(int argc, char** argv) {
 				cout<<endl<<"Ingrese su contrasena:";
 				cin>>contra;
 				
+				
+				bool match = false;
+				for(int i = 0;i < lista_personas.size();i++){
+					if(nombre == lista_personas[i]->getNombre() && contra == lista_personas[i]->getContrasena()){
+						match = true;
+						persManipulada = lista_personas[i];
+						break;
+					}
+				}
+				
+				if(match){
+					cout<<endl<<"BIENVENIDO(A)------>"<<nombre<<endl;
+					while(subOption != 4){
+						cout<<"1)Enviar Mensaje"<<endl<<"2)Ver Mensajes"<<endl<<"3)Ver mi llave"<<endl<<"4)Salir"<<endl<<"Ingrese una opcion:";
+						cin>>subOption ;
+						switch(subOption){//switch con las opciones del menu dentro del log-in
+							case 1:{
+								cout<<endl<<"-------ENVIAR MENSAJE------"<<endl;
+								break;
+							}
+							case 2:{
+								cout<<endl<<"-------VER MENSAJES------"<<endl;
+								break;
+							}
+							case 3:{
+								cout<<endl<<"-------VER MI LLAVE------"<<endl;
+								cout<<"Mi llave:"<<persManipulada->getLlave()<<endl;
+								break;
+							}
+							case 4:{
+								cout<<endl<<"Ha salido de su perfil"<<endl;
+								
+								break;
+							}
+						}
+					}
+					
+				}else{
+					cout<<endl<<"Nombre o Contrasena Invalidas"<<endl;
+				}
+				
+				
 				break;
 			}
 			case 3:{
 				delete pers;
+				delete persManipulada;
 				cout<<endl<<"Vuelva Pronto";
 				break;
 			}

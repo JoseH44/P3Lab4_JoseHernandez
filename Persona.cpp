@@ -26,6 +26,10 @@ vector <string> Persona::getMensajes(){
     return lista_mensajes;
 }
 
+int Persona::getLlave(){
+	return(llave);
+}
+
 Persona::Persona()
 {
 }

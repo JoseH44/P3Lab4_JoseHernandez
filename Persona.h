@@ -24,6 +24,7 @@ class Persona
 		string getNombre();
 		string getApellido();
 		string getContrasena();
+		int getLlave();
 		vector<string> getMensajes();
 		
 		
