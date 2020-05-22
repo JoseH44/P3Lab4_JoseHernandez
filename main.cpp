@@ -79,6 +79,14 @@ int main(int argc, char** argv) {
 						switch(subOption){//switch con las opciones del menu dentro del log-in
 							case 1:{
 								cout<<endl<<"-------ENVIAR MENSAJE------"<<endl;
+								cout<<"    Lista de Personas"<<endl;
+								for(int i = 0;i < lista_personas.size();i++){
+									
+									cout<<i<<"."<<lista_personas[i]->getNombre()<<endl;
+								}
+								int seleccion;
+								cout<<"Escoja el Numero de la Persona a quien le mandara un mensaje:";
+								cin>>seleccion;
 								break;
 							}
 							case 2:{
