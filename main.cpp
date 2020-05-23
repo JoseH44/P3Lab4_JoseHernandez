@@ -18,24 +18,16 @@ vector<Persona*> lista_personas;
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
+//funcion que encripa y desencripta un mensaje
 string encriptacion(string,string,int,int);
 
 
 int main(int argc, char** argv) {
 	
 	int option = 0;
-	/*string message = "pepeelgallo";
-	char caracter_pos_1 = message[1];
-	int valor_ascci = caracter_pos_1;//pasar de caracter a ascci
-	cout<<caracter_pos_1<<endl;
-	cout<<valor_ascci<<endl;
-	char caracter = (char) valor_ascci;//pasar de ascci a caracter
-	cout<<caracter<<endl;*/
 	
-	string s = "gato+perro";
-	string delimeter = "+";
-	string token = s.substr(0,s.find(delimeter));
-	cout<<token;
+	
+	
 	
 	cout<<"------ENCRIPTED MESSENGER-----   "<<endl<<endl;
 	while(option != 3){
@@ -190,7 +182,7 @@ string encriptacion(string mensaje,string emisor,int llave,int estado){
 	string salida = "";
 	int cont = 0;
 	int pos = 0;
-	int cont_intercambio = 0;
+	
 	int state = estado;
 	while(cont<llave){//numero de iteraciones
 		for(int i=0;i<mensaje.size()/llave;i++){//numero de grupos
